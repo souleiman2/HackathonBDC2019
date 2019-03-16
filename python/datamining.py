@@ -4,7 +4,7 @@ import os
 
 filename = 'data.pickle'
 
-def filter(segment_name):
+def filter(item, segment_name):
     res = []
     for item in items:
         if item["segment_name"] == segment_name:
@@ -38,16 +38,22 @@ for item in items:
         
 items = temp
 
-all_users_items = filter("All Users")
-new_users_items = filter("New Users")
-ret_users_items = filter("Returning Users")
-organic_traffic_items = filter("Organic Traffic")
+all_users_items = filter(items, "All Users")
+new_users_items = filter(items, "New Users")
+ret_users_items = filter(items, "Returning Users")
+organic_traffic_items = filter(items, "Organic Traffic")
 
 
 
-pageviews = list(map(lambda item: item["pageviews"], all_users_items))
+pageviews_au = list(map(lambda item: item["pageviews"], all_users_items))
+pageviews_nu = list(map(lambda item: item["pageviews"], new_users_items))
+pageviews_eu = list(map(lambda item: item["pageviews"], ret_users_items))
+
 months = list(map(lambda item: item["date_start"][:-3], all_users_items))
-print(pageviews)
+months_ = list(map(lambda item: item["date_start"][:-3], new_users_items))
+print(pageviews_au)
+print(pageviews_nu)
 print(months)
+print(months_)
 
 print(len(items))
