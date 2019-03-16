@@ -10,12 +10,17 @@ SRC := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ := $(addprefix $(BIN_DIR)/, $(notdir $(SRC:.cpp=.o)))
 
 
-TRG = SqlTest
+TRG = SqlTest.exe
 
 LIBS = 
 
 # Phony
+.PHONY: all clean
+
 all: $(TRG)
+
+clean:
+	rm -f $(BIN_DIR)/* $(TRG)
 
 
 # Flags
