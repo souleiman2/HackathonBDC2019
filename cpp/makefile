@@ -12,7 +12,7 @@ OBJ := $(addprefix $(BIN_DIR)/, $(notdir $(SRC:.cpp=.o)))
 
 TRG = SqlTest
 
-LIBS = -lmysqlcppconn -lmysqlcppconn8 -lssleay32 -llibeay32
+LIBS = 
 
 # Phony
 all: $(TRG)
