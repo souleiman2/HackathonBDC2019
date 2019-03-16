@@ -4,7 +4,6 @@ import os
 
 filename = 'data.pickle'
 
-
 if not os.path.isfile('data.pickle'):
     max_page_number = 1164
     items = []
@@ -23,3 +22,18 @@ else:
         items = pickle.load(f)
 
 print(items[0].keys())
+
+temp = []
+for item in items:
+    web_id = item["website_id"]
+    if web_id == 9:
+        temp.append(item)
+
+items = temp
+
+pageviews = list(map(lambda item: item["pageviews"], items))
+months = list(map(lambda item: item["date_start"][:-3], items))
+print(pageviews)
+print(months)
+
+print(len(items))
