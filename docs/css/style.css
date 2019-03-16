@@ -1,5 +1,5 @@
 body {
-	background-color: Khaki;
+	background-color: Moccasin;
 	margin: 0;
 	font-size: 28px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -39,7 +39,7 @@ nav a.active {
 footer
 {
     background: linear-gradient(to bottom, #949494, #696969);
-    min-height: 150px;
+    min-height: 95px;
     font-family: Gadget, Arial;
     color:#222222;
 
@@ -59,6 +59,9 @@ footer p
     padding-left: 20px;
     font-family: Gadget, Arial;
     font-weight: bold;
+}
+footer p a {
+    color: white;
 }
 footer p a:hover {
     color: #aaaaaa;
