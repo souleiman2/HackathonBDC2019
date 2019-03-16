@@ -28,11 +28,16 @@ for item in items:
     web_id = item["website_id"]
     if web_id == 9:
         temp.append(item)
-
+        
 items = temp
 
-pageviews = list(map(lambda item: item["pageviews"], items))
-months = list(map(lambda item: item["date_start"][:-3], items))
+all_users_items = []
+for item in items:
+    if item["segment_name"] == "All Users":
+        all_users_items.append(item)
+
+pageviews = list(map(lambda item: item["pageviews"], all_users_items))
+months = list(map(lambda item: item["date_start"][:-3], all_users_items))
 print(pageviews)
 print(months)
 
